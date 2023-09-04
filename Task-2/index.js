@@ -18,7 +18,7 @@ const cart = {
     standBy: function () {
         while (true) {
             console.log (`\nInput 'add' to add a value\nInput 'remove to remove a value\nInput 'show-items' to show the items in the cart
-Input 'length' to show the lenght of the cart\nInput 'exit' to exit the program\n\n`)
+Input 'length' to show the length of the cart\nInput 'exit' to exit the program\n\n`)
         
             let operation = prompt("Command:     ")
         
