@@ -8,13 +8,17 @@ const cart = {
     },
     removeFromCart: function (product) {
         let productIndex = this.cartArray.indexOf(product)
-        this.cartArray.splice(productIndex, 1)
-        console.log("Product removed successfully\n")
+        if (this.cartArray.includes(product)){
+            this.cartArray.splice(productIndex, 1)
+            console.log("Product removed successfully\n")
+        }else {
+            console.log("Product not in cart\n")
+        }
     },
     standBy: function () {
         while (true) {
             console.log (`\nInput 'add' to add a value\nInput 'remove to remove a value\nInput 'show-items' to show the items in the cart
-Input 'lenght' to show the lenght of the cart\nInput 'exit' to exit the program\n\n`)
+Input 'length' to show the lenght of the cart\nInput 'exit' to exit the program\n\n`)
         
             let operation = prompt("Command:     ")
         
@@ -33,7 +37,7 @@ Input 'lenght' to show the lenght of the cart\nInput 'exit' to exit the program\
                 }
                 console.log(this.cartArray.join(", "))
             }
-            else if (operation.toLowerCase() == "lenght") {
+            else if (operation.toLowerCase() == "length") {
                 console.log(cart.cartArray.length)
             }
             else if (operation.toLowerCase() == "remove") {
